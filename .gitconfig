@@ -1,1 +1,22 @@
-/home/szymek/.gitconfig
+[user]
+	name = Szymon Sobanski
+	email = szymon.sobanski@sabre.com
+[color]
+	ui = true
+[alias]
+	au = add -u
+	cp = cherry-pick
+	st = status
+	sts = status -s
+	cl = clone
+	ci = commit
+	co = checkout
+	br = branch
+	dc = diff --cached
+	r = reset
+	rh = reset --hard
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	logp = log -p 
+	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+	diffc = diff --cached
