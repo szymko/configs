@@ -1,0 +1,1 @@
+/home/szymek/.bash_aliases
