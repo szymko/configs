@@ -1,7 +1,7 @@
 ## Bash aliases ##
 
 ## File functions & utilities
-function updated_at(){ 
+function updated_at(){
 	stat -c %y $1 | awk '{printf $1 "\n"}'
 }
 
@@ -36,6 +36,11 @@ alias p_search='ps aux |grep '
 ## System control
 alias shutd='sudo shutdown -P now'
 alias shutr='sudo shutdown -r now'
+
+## Package control
+alias apt-install='sudo apt-get install'
+alias apt-update='sudo apt-get update'
+alias apt-upgrade='sudo apt-get upgrade'
 
 ## Rails
 alias be='bundle exec'

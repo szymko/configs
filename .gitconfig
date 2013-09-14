@@ -17,6 +17,6 @@
 	rh = reset --hard
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-	logp = log -p 
+	logp = log -p
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-	diffc = diff --cached
+	difc = diff --cached
