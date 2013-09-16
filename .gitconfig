@@ -20,3 +20,4 @@
 	logp = log -p
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	difc = diff --cached
+	pom = push origin master
