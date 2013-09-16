@@ -20,4 +20,6 @@
 	logp = log -p
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	difc = diff --cached
-	pom = push origin master
+  pom = push origin master
+  pl = git pull
+  plr = git pull --rebase
