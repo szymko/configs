@@ -46,3 +46,6 @@ alias apt-upgrade='sudo apt-get upgrade'
 alias be='bundle exec'
 alias pry_console='pry -r ./config/environment.rb'
 alias bi_multi='bundle install -j4'
+
+## Git
+alias g_cert_problem='git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt'
