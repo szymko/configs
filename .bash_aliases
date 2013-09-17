@@ -49,3 +49,4 @@ alias bi_multi='bundle install -j4'
 
 ## Git
 alias g_cert_problem='git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt'
+alias g='git'
