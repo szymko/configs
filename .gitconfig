@@ -20,5 +20,5 @@
 	logp = log -p
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	difc = diff --cached
-        pu = push
+        ps = push
         pl = pull

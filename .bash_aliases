@@ -5,6 +5,17 @@ function updated_at(){
 	stat -c %y $1 | awk '{printf $1 "\n"}'
 }
 
+function proff(){
+  export http_proxy=''
+  export https_proxy=''
+  export no_proxy=''
+  export ftp_proxy=''
+}
+
+function pron(){
+  source /etc/environment
+}
+
 alias updated='updated_at'
 alias t='tail'
 alias h='head'
