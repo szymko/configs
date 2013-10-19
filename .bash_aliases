@@ -47,6 +47,7 @@ alias p_search='ps aux |grep '
 ## System control
 alias shutd='sudo shutdown -P now'
 alias shutr='sudo shutdown -r now'
+alias diag='gkrellm'
 
 ## Package control
 alias apt-install='sudo apt-get install'
