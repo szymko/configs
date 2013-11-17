@@ -3,7 +3,9 @@
 function conf_backup {
   for file in "$@"
   do
-    mv $HOME/"$file" $HOME/"$file".backup
+    if [ -f $HOME/"$file" ]; then
+      mv $HOME/"$file" $HOME/"$file".backup
+    fi
   done
 }
 
@@ -14,6 +16,6 @@ function conf_link {
   done
 }
 
-conf_backup .bashrc .bash_aliases .gitconfig
+conf_backup .bashrc .bash_aliases .gitconfig .inputrc
 
-conf_link .bashrc .bash_aliases .gitconfig
+conf_link .bashrc .bash_aliases .gitconfig .inputrc
