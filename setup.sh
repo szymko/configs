@@ -27,7 +27,7 @@ else
   bash_profile=".bashrc"
 fi
 
-conf_backup $bash_profile .bash_aliases .gitconfig .inputrc
-conf_link $bash_profile .bash_aliases .gitconfig .inputrc
+conf_backup $bash_profile .bash_aliases .gitconfig .inputrc .vimrc
+conf_link $bash_profile .bash_aliases .gitconfig .inputrc .vimrc
 
 rm .profile
