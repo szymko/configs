@@ -12,10 +12,22 @@ function conf_backup {
 function conf_link {
   for file in "$@"
   do
+    if [ -f $HOME/"$file" ]; then
+      rm $HOME/"$file"
+    fi
     ln "$file" $HOME/"$file"
   done
 }
 
-conf_backup .bashrc .bash_aliases .gitconfig .inputrc
+cp .bashrc .profile
 
-conf_link .bashrc .bash_aliases .gitconfig .inputrc
+if [[ $OSTYPE =~ "darwin1" ]]; then
+  bash_profile=".profile"
+else
+  bash_profile=".bashrc"
+fi
+
+conf_backup $bash_profile .bash_aliases .gitconfig .inputrc
+conf_link $bash_profile .bash_aliases .gitconfig .inputrc
+
+rm .profile

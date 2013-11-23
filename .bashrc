@@ -8,6 +8,8 @@ if [ -f ~/.bash_locals ]; then
 . ~/.bash_locals
 fi
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Ruby settings
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_FREE_MIN=200000
