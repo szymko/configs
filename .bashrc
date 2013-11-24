@@ -10,6 +10,12 @@ fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
+if [ -d ~/.git_prompt ]; then
+  export GITAWAREPROMPT=~/.git_prompt
+  source $GITAWAREPROMPT/main.sh
+  export PS1="\u@\h: \W \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+fi
+
 # Ruby settings
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_FREE_MIN=200000
