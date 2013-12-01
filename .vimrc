@@ -28,4 +28,4 @@ set smartcase                   " ... unless they contain at least one capital l
 map <C-P> :FufCoverageFile <CR>
 map <C-T> :vsp <CR><C-W><C-W>
 map <C-E> <C-W><C-W>
-map <C-D> :ciw
+map <C-D> :ciw <CR>
