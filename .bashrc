@@ -23,6 +23,10 @@ if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
 fi
 
+if [ -f ~/.bashrc_local ]; then
+  source ~/.bashrc_local
+fi
+
 # Ruby settings
 export RUBY_GC_MALLOC_LIMIT=90000000
 export RUBY_FREE_MIN=200000
