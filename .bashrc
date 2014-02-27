@@ -27,7 +27,21 @@ if [ -f ~/.bashrc_local ]; then
   source ~/.bashrc_local
 fi
 
-# Ruby settings
-export RUBY_GC_MALLOC_LIMIT=90000000
-export RUBY_FREE_MIN=200000
+set_ruby_env_vars() {
+  if command -v ruby >/dev/null 2>&1; then
+    OldRuby=`ruby -e "puts RUBY_VERSION =~ /(1|2)\.(8|9|0).\d/" 2> /dev/null`
+
+    export RUBY_GC_MALLOC_LIMIT=90000000
+
+    if [ -n "$OldRuby" ]; then
+      unset RUBY_GC_HEAP_FREE_SLOT
+      export RUBY_FREE_MIN=200000
+    else
+      unset RUBY_FREE_MIN
+      export RUBY_GC_HEAP_FREE_SLOT=20000
+    fi
+  fi
+}
+
+export PROMPT_COMMAND=set_ruby_env_vars
 export GIT_EDITOR=vim
