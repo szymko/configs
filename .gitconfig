@@ -20,5 +20,6 @@
 	logp = log -p
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
 	difc = diff --cached
-        ps = push
-        pl = pull
+  ps = push
+  pl = pull
+  up = !git remote update -p; git merge --ff-only @{u}
