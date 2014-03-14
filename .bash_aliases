@@ -16,6 +16,11 @@ function pron(){
   source /etc/environment
 }
 
+function git_push_self() {
+  branch=`git rev-parse --abbrev-ref HEAD`
+  `git push origin $branch`
+}
+
 alias updated='updated_at'
 alias t='tail'
 alias h='head'
@@ -62,3 +67,4 @@ alias bi_multi='bundle install -j4'
 ## Git
 alias g_cert_problem='git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt'
 alias g='git'
+alias ps_self='git_push_self'
