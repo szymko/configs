@@ -45,3 +45,4 @@ set_ruby_env_vars() {
 
 export PROMPT_COMMAND=set_ruby_env_vars
 export GIT_EDITOR=vim
+export PATH=/usr/local/bin:/usr/local/sbin:"$PATH"
