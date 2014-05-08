@@ -68,3 +68,6 @@ alias bi_multi='bundle install -j4'
 alias g_cert_problem='git config --global http.sslCAinfo /etc/ssl/certs/ca-certificates.crt'
 alias g='git'
 alias ps_self='git_push_self'
+
+## Heroku
+alias heroku_ssh 'ssh-add ~/.ssh/heroku'
