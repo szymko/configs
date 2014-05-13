@@ -70,4 +70,4 @@ alias g='git'
 alias ps_self='git_push_self'
 
 ## Heroku
-alias heroku_ssh 'ssh-add ~/.ssh/heroku'
+alias heroku_ssh='ssh-add ~/.ssh/heroku'

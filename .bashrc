@@ -19,7 +19,8 @@ if [ -f ~/.git-prompt.sh ]; then
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1="\u@\h: \W \e[0;32m\$(__git_ps1)\e[m\$ "
+#export PS2="\u@\h: \W \e[0;32m\$(__git_ps1)\e[m\$"
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1)$ '
 
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
@@ -48,3 +49,4 @@ set_ruby_env_vars() {
 export PROMPT_COMMAND=set_ruby_env_vars
 export GIT_EDITOR=vim
 export PATH=/usr/local/bin:/usr/local/sbin:"$PATH"
+
