@@ -41,6 +41,9 @@ alias path='echo -e ${PATH//:/\\n}'
 ## Alias ls command
 alias la='ls -a'
 
+alias unsafe_rm='rm'
+alias rm='rm -i'
+
 ## Reload .bashrc
 alias reload='source $HOME/.bashrc'
 alias showalias='cat $HOME/.bash_aliases'
