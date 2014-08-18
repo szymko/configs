@@ -1,25 +1,68 @@
 [user]
 	name = Szymon Sobanski
 	email = sobanski.s@gmail.com
+
 [color]
 	ui = true
+
 [alias]
 	au = add -u
-	cp = cherry-pick
-	st = status
-	sts = status -s
-	cl = clone
-	ci = commit
-	co = checkout
+
 	br = branch
+  bm   = branch --merged master
+  bn   = branch --no-merged master
+
+	ci = commit
+	ca = commit --amend
+	cl = clone
+	co = checkout
+	cp = cherry-pick
+
 	dc = diff --cached
-	r = reset
-	rh = reset --hard
-	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	difc = diff --cached
+
 	logp = log -p
 	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-	difc = diff --cached
-  ps = push
+	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+
+  l    = "!sh -c 'git log --pretty=format:\"%Cred%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%ae%Creset\" master.. | cat -n;echo'"
+  lc   = "!sh -c 'git log --pretty=format:\"%Cred%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%ae%Creset\" --graph'"
+  la   = "!sh -c 'git log --pretty=format:\"%Cred%h%Creset -%C(red)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)%ae%Creset\" --graph --all'"
+
+
   pl = pull
-  up = !git remote update -p; git merge --ff-only @{u}
+  ps = push
+
+	r = reset
+	rh = reset --hard
+
+	st = status
+	sts = status -s
+
+  poc  = "!sh -c 'git push origin $(git rev-parse --abbrev-ref HEAD)'"
+  pocf = "!sh -c 'git push origin -f $(git rev-parse --abbrev-ref HEAD)'"
+  pom  = push origin master
+
+  r    = rebase
+  ra   = rebase --abort
+  rc   = rebase --continue
+  ri   = rebase --interactive --autosquash
+  rim  = rebase --interactive --autosquash master
+  ril  = "!sh -c 'if [[ $0 =~ ^[0-9]+$ ]]; then LINE=HEAD~$(($(($0-1)))); else LINE=$0; fi; git rebase --interactive --autosquash $LINE'"
+
+  rf   = reflog --pretty='%cd %h %gd %gs'
+
+  rt   = reset
+  rth  = reset --hard
+  rts  = reset --soft
+
+  s   = status
+  sh  = "!sh -c 'if [[ $0 =~ ^[0-9]+$ ]]; then LINE=$(($0-1)); else LINE=0; fi; git show HEAD~$(($LINE))'"
+
+[core]
+  excludesfile = ~/.gitignore
+  editor = vim
+
+[github]
+  user = szymko
