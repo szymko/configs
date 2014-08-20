@@ -64,4 +64,8 @@ function setjdk() {
 function removeFromPath() {  
   export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")  
 }
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 setjdk 1.7
