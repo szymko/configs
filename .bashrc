@@ -12,6 +12,7 @@ if [ -f ~/.bash_locals ]; then
 . ~/.bash_locals
 fi
 
+if which rbenv > /dev/null; then export PATH="$HOME/.rbenv/bin:$PATH"; fi
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 if [ -f ~/.git-prompt.sh ]; then
