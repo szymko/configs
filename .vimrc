@@ -1,13 +1,10 @@
-execute pathogen#infect()
 set nocompatible                " choose no compatibility with legacy vi
 syntax enable
 set t_Co=256
-let g:solarized_termcolors=256
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 set background=light
 filetype plugin indent on       " load file type plugins + indentation
-colorscheme solarized
 
 "" Whitespace
 set nowrap                      " don't wrap lines
