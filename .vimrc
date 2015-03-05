@@ -20,6 +20,8 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+set splitright
+set wrap
 
 map <C-P> :FufCoverageFile <CR>
 map <C-T> :vsp <CR><C-W><C-W>
@@ -54,8 +56,9 @@ Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
-Plugin 'timheap/linters.vim'
 Plugin 'yegappan/grep'
+Plugin 'scrooloose/nerdtree'
+Plugin 'ntpeters/vim-better-whitespace'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
