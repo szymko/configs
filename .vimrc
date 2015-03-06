@@ -4,6 +4,7 @@ set t_Co=256
 set encoding=utf-8
 set showcmd                     " display incomplete commands
 filetype plugin indent on       " load file type plugins + indentation
+colorscheme desert
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -23,7 +24,6 @@ set smartcase                   " ... unless they contain at least one capital l
 set splitright
 set wrap
 
-map <C-P> :FufCoverageFile <CR>
 map <C-T> :vsp <CR><C-W><C-W>
 map <C-E> <C-W><C-W>
 
@@ -31,10 +31,13 @@ if &compatible
   set nocompatible
 end
 
+"" too long lines highlighting
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-
 
 " Define bundles via Github repos
 Plugin 'christoomey/vim-run-interactive'
