@@ -68,6 +68,7 @@ Plugin 'yegappan/grep'
 Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
+Plugin 'fatih/vim-go'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
