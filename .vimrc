@@ -69,10 +69,19 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
 Plugin 'fatih/vim-go'
+Plugin 'briancollins/vim-jst'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'bling/vim-airline'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
 endif
 
 call vundle#end()
+
+let g:airline_theme='powerlineish'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_z=''
+
 filetype on
