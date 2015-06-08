@@ -40,12 +40,14 @@ alias path='echo -e ${PATH//:/\\n}'
 
 ## Alias ls command
 alias la='ls -a'
+alias ls='/bin/ls -G'
+alias ls_nocolor='/bin/ls'
 
 alias unsafe_rm='/bin/rm'
 alias rm='rm -i'
 
 ## Reload .bashrc
-alias reload='source $HOME/.bashrc'
+alias reload='source $HOME/.profile'
 alias showalias='cat $HOME/.bash_aliases'
 
 ## Search

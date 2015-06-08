@@ -31,6 +31,7 @@ if [ -f ~/.bashrc_local ]; then
   source ~/.bashrc_local
 fi
 
+
 set_ruby_env_vars() {
   if command -v ruby >/dev/null 2>&1; then
     OldRuby=`ruby -e "puts RUBY_VERSION =~ /(1|2)\.(8|9|0).\d/" 2> /dev/null`
@@ -50,19 +51,20 @@ set_ruby_env_vars() {
 export PROMPT_COMMAND=set_ruby_env_vars
 export GIT_EDITOR=vim
 export PATH=/usr/local/bin:/usr/local/sbin:"$PATH"
+export HISTCONTROL=ignoredups
 
 function setjdk() {
-  if [ $# -ne 0 ]; then  
-    removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'  
-    if [ -n "${JAVA_HOME+x}" ]; then  
-      removeFromPath $JAVA_HOME/bin  
-    fi  
-    export JAVA_HOME=`/usr/libexec/java_home -v $@`  
-    export PATH=$JAVA_HOME/bin:$PATH  
-  fi  
-}  
-function removeFromPath() {  
-  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")  
+  if [ $# -ne 0 ]; then
+    removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+    if [ -n "${JAVA_HOME+x}" ]; then
+      removeFromPath $JAVA_HOME/bin
+    fi
+    export JAVA_HOME=`/usr/libexec/java_home -v $@`
+    export PATH=$JAVA_HOME/bin:$PATH
+  fi
+}
+function removeFromPath() {
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
 }
 
 export LC_ALL=en_US.UTF-8
