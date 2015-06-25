@@ -1,5 +1,8 @@
 [[ -s "/home/szymek/.rvm/scripts/rvm" ]] && source "/home/szymek/.rvm/scripts/rvm"
 
+# set VI keybindings
+set -o vi
+
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
@@ -30,7 +33,6 @@ fi
 if [ -f ~/.bashrc_local ]; then
   source ~/.bashrc_local
 fi
-
 
 set_ruby_env_vars() {
   if command -v ruby >/dev/null 2>&1; then
