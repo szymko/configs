@@ -70,7 +70,6 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-commentary'
 Plugin 'fatih/vim-go'
 Plugin 'briancollins/vim-jst'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'bling/vim-airline'
 Plugin 'Shutnik/jshint2.vim'
 
