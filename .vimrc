@@ -72,6 +72,7 @@ Plugin 'fatih/vim-go'
 Plugin 'briancollins/vim-jst'
 Plugin 'bling/vim-airline'
 Plugin 'Shutnik/jshint2.vim'
+Plugin 'rizzatti/dash.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
