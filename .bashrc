@@ -1,8 +1,5 @@
 [[ -s "/home/szymek/.rvm/scripts/rvm" ]] && source "/home/szymek/.rvm/scripts/rvm"
 
-# set VI keybindings
-set -o vi
-
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi

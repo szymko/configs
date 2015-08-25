@@ -34,7 +34,7 @@ end
 if exists("g:ctrl_user_command")
   unlet g:ctrlp_user_command
 endif
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor,*/coverage
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor/*,*/coverage/*,*/spec/reports/*
 
 "" too long lines highlighting
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
@@ -98,6 +98,8 @@ Plugin 'fatih/vim-go'
 Plugin 'briancollins/vim-jst'
 Plugin 'Shutnik/jshint2.vim'
 Plugin 'rizzatti/dash.vim'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'heavenshell/vim-jsdoc'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
