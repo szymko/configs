@@ -3,6 +3,7 @@ syntax enable
 set t_Co=256
 set encoding=utf-8
 set showcmd                     " display incomplete commands
+set vb                          " disable bell warnings
 filetype plugin indent on       " load file type plugins + indentation
 colorscheme desert
 
