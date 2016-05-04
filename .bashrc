@@ -21,7 +21,7 @@ fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
 #export PS2="\u@\h: \W \e[0;32m\$(__git_ps1)\e[m\$"
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1)$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]λ\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1)$ '
 
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion

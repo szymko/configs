@@ -45,6 +45,10 @@ match OverLength /\%81v.\+/
 
 let NERDTreeShowHidden=1
 
+let g:typescript_compiler_options = '--sourcemap --experimentalDecorators'
+let g:syntastic_typescript_tsc_args = "--experimentalDecorators"
+let g:syntastic_typescript_tsc_fname = ''
+
 "" https://github.com/scrooloose/nerdtree/issues/433#issuecomment-92590696
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
@@ -101,6 +105,9 @@ Plugin 'Shutnik/jshint2.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'heavenshell/vim-jsdoc'
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'Shougo/vimproc.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
