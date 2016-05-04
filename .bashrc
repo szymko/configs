@@ -1,3 +1,4 @@
+#!/bin/bash
 [[ -s "/home/szymek/.rvm/scripts/rvm" ]] && source "/home/szymek/.rvm/scripts/rvm"
 
 if [ -f ~/.bash_aliases ]; then
@@ -45,6 +46,60 @@ set_ruby_env_vars() {
       export RUBY_GC_HEAP_FREE_SLOT=20000
     fi
   fi
+}
+
+#from: https://github.com/driv/upto/blob/master/upto.sh
+# The MIT License (MIT)
+#
+# Copyright (c) 2016 Federico Nafria
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+# Status API Training Shop Blog About
+function upto() {
+	local EXPRESSION="$1"
+	if [ -z "$EXPRESSION" ]; then
+		echo "A folder expression must be provided." >&2
+		return 1
+	fi
+	if [ "$EXPRESSION" = "/" ]; then
+		cd "/"
+		return 0
+	fi
+	local CURRENT_FOLDER="$(pwd)"
+	local MATCHED_DIR=""
+	local MATCHING=true
+
+	while [ "$MATCHING" = true ]; do
+		if [[ "$CURRENT_FOLDER" =~ "$EXPRESSION" ]]; then
+			MATCHED_DIR="$CURRENT_FOLDER"
+			CURRENT_FOLDER=$(dirname "$CURRENT_FOLDER")
+		else
+			MATCHING=false
+		fi
+	done
+	if [ -n "$MATCHED_DIR" ]; then
+		cd "$MATCHED_DIR"
+		return 0
+	else
+		echo "No Match." >&2
+		return 1
+	fi
 }
 
 export PROMPT_COMMAND=set_ruby_env_vars
