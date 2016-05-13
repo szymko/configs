@@ -76,3 +76,5 @@ alias ps_self='git_push_self'
 
 ## Heroku
 alias heroku_ssh='ssh-add ~/.ssh/heroku'
+
+alias git_prune_branches='g br | xargs -I {} bash -c -f '\'' if ! [[ "{}"  =~ "master" || "{}" =~ "development" ]]; then git branch -D {}; fi'\'''
