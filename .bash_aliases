@@ -1,4 +1,4 @@
-## Bash aliases ##
+# Bash aliases ##
 
 ## File functions & utilities
 function updated_at(){
@@ -19,6 +19,13 @@ function pron(){
 function git_push_self() {
   branch=`git rev-parse --abbrev-ref HEAD`
   `git push origin $branch`
+}
+
+function git_force_remote() {
+  pushFrom=`git rev-parse --abbrev-ref HEAD`
+  pushTo=$1
+
+ `git push --force origin $pushFrom:$pushTo`
 }
 
 alias updated='updated_at'
