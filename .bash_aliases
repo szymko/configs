@@ -19,6 +19,7 @@ function pron(){
 function git_push_self() {
   branch=`git rev-parse --abbrev-ref HEAD`
   `git push origin $branch`
+  sh -c "git branch --set-upstream-to=origin/$branch $branch"
 }
 
 function git_force_remote() {
