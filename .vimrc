@@ -38,17 +38,15 @@ if exists("g:ctrl_user_command")
 endif
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.idea/*,*/.DS_Store,*/vendor/*,*/coverage/*,*/spec/reports/*
 
-"" too long lines highlighting
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+:set textwidth=80
+:set colorcolumn=+1
+:hi ColorColumn guibg=#2d2d2d ctermbg=246
 
 "" NERDTree setup
 
 let NERDTreeShowHidden=1
 
-let g:typescript_compiler_options = '--sourcemap --experimentalDecorators'
-let g:syntastic_typescript_tsc_args = "--experimentalDecorators"
-let g:syntastic_typescript_tsc_fname = ''
+""let g:syntastic_javascript_checkers = ['eslint']
 
 "" https://github.com/scrooloose/nerdtree/issues/433#issuecomment-92590696
 
