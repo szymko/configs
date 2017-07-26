@@ -124,4 +124,4 @@ function removeFromPath() {
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-setjdk 1.7
+setjdk 1.8
