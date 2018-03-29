@@ -102,6 +102,9 @@ function upto() {
 	fi
 }
 
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
 export PROMPT_COMMAND=set_ruby_env_vars
 export GIT_EDITOR=vim
 export PATH=/usr/local/bin:/usr/local/sbin:"$PATH"
@@ -124,4 +127,4 @@ function removeFromPath() {
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
-setjdk 1.7
+setjdk 1.8
