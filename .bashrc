@@ -1,6 +1,4 @@
 #!/bin/bash
-[[ -s "/home/szymek/.rvm/scripts/rvm" ]] && source "/home/szymek/.rvm/scripts/rvm"
-
 if [ -f ~/.bash_aliases ]; then
 . ~/.bash_aliases
 fi
@@ -21,11 +19,10 @@ if [ -f ~/.git-prompt.sh ]; then
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
-#export PS2="\u@\h: \W \e[0;32m\$(__git_ps1)\e[m\$"
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]λ\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]$(__git_ps1)$ '
 
-if [ -f /etc/bash_completion ]; then
-  . /etc/bash_completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
 fi
 
 if [ -f ~/.bashrc_local ]; then
@@ -48,6 +45,7 @@ set_ruby_env_vars() {
   fi
 }
 
+<<<<<<< Updated upstream
 #from: https://github.com/driv/upto/blob/master/upto.sh
 # The MIT License (MIT)
 #
@@ -128,3 +126,6 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 setjdk 1.8
+
+if which pyenv > /dev/null; then export PATH="$HOME/.pyenv/bin:$PATH"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
