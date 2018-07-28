@@ -45,7 +45,6 @@ set_ruby_env_vars() {
   fi
 }
 
-<<<<<<< Updated upstream
 #from: https://github.com/driv/upto/blob/master/upto.sh
 # The MIT License (MIT)
 #
